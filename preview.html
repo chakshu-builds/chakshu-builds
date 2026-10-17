@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chakshu Arora (@chakshubuilds) — Portfolio & Profile Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-body: #070b16;
+      --bg-card: #0d1326;
+      --bg-card-subtle: #090f20;
+      --border-card: #1c284a;
+      --border-hover: #247bff;
+      --text-main: #f0f4fc;
+      --text-muted: #8ba0c8;
+      --text-dim: #5a7099;
+      --accent-blue: #247bff;
+      --accent-crimson: #ff354f;
+      --accent-teal: #00d4ff;
+      --accent-emerald: #10b981;
+      --glow-blue: rgba(36, 123, 255, 0.2);
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'Cascadia Code', monospace;
+      --max-width: 980px;
+    }
+
+    [data-theme="light"] {
+      --bg-body: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-card-subtle: #f1f5f9;
+      --border-card: #e2e8f0;
+      --border-hover: #247bff;
+      --text-main: #070b16;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --glow-blue: rgba(36, 123, 255, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding-bottom: 90px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Top Navigation */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 11, 22, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-card);
+      padding: 12px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    [data-theme="light"] .top-nav { background: rgba(248, 250, 252, 0.92); }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .nav-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-crimson));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 13px;
+      color: #fff;
+    }
+    .nav-title { font-weight: 700; font-size: 15px; }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-action {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      color: var(--text-main);
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-action:hover {
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: var(--max-width);
+      margin: 36px auto 0;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    /* Terminal Banner Section */
+    .banner-wrapper {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+      border: 1px solid var(--border-card);
+      position: relative;
+    }
+    .banner-wrapper object, .banner-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Section Styling */
+    .section-header {
+      margin-bottom: 20px;
+    }
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+    }
+
+    /* SVG Component Cards */
+    .svg-embed-card {
+      width: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .svg-embed-card:hover {
+      border-color: var(--accent-blue);
+      box-shadow: 0 20px 48px rgba(36, 123, 255, 0.15);
+    }
+    .svg-embed-card object, .svg-embed-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Footer */
+    .footer-bar {
+      margin-top: 60px;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-dim);
+      border-top: 1px solid var(--border-card);
+      padding-top: 24px;
+    }
+    .footer-bar a { color: var(--accent-blue); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <a href="https://github.com/chakshubuilds" target="_blank" class="nav-brand">
+      <div class="nav-logo">CA</div>
+      <div>
+        <div class="nav-title">Chakshu Arora</div>
+        <div style="font-size: 11px; color: var(--text-dim); font-family: var(--font-mono);">github.com/chakshubuilds</div>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <a href="https://github.com/chakshubuilds" target="_blank" class="btn-action">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/chakshuarora716/" target="_blank" class="btn-action">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        LinkedIn
+      </a>
+      <a href="mailto:chakshuarora098@gmail.com" class="btn-action">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email
+      </a>
+      <button class="btn-action" id="themeToggle" onclick="toggleTheme()">
+        <span id="themeIcon">☀️</span> Toggle Theme
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- 00: MASTER TERMINAL BANNER -->
+    <section>
+      <div class="banner-wrapper">
+        <object id="mainBanner" data="dark.svg?v=15" type="image/svg+xml"></object>
+      </div>
+    </section>
+
+    <!-- 01: ABOUT & IDENTITY -->
+    <section>
+      <div class="svg-embed-card">
+        <object data="assets/about-life.svg?v=15" type="image/svg+xml"></object>
+      </div>
+    </section>
+
+    <!-- 02: TECHNICAL STACK MATRIX -->
+    <section>
+      <div class="section-header">
+        <div class="section-tag">02 // ARCHITECTURE MATRIX</div>
+        <h2 class="section-title">3D Orbiting Stack &amp; Verified Toolchain</h2>
+      </div>
+      <div class="svg-embed-card">
+        <object data="assets/stack.svg?v=15" type="image/svg+xml"></object>
+      </div>
+    </section>
+
+    <!-- 03: DEVELOPER ID PASSPORT & TELEMETRY -->
+    <section>
+      <div class="section-header">
+        <div class="section-tag">03 // VERIFIED TELEMETRY</div>
+        <h2 class="section-title">Developer Identity Passport (Pendulum Swing)</h2>
+      </div>
+      <div class="svg-embed-card">
+        <object data="assets/id-dashboard.svg?v=15" type="image/svg+xml"></object>
+      </div>
+    </section>
+
+    <!-- 04: LIVE TELEMETRY & ACTIVITY DASHBOARD -->
+    <section>
+      <div class="section-header">
+        <div class="section-tag">04 // GITHUB ACTIVITY &amp; VELOCITY</div>
+        <h2 class="section-title">Live Engineering Telemetry &amp; Metrics</h2>
+      </div>
+      <div class="svg-embed-card">
+        <object data="assets/activity-dashboard.svg?v=15" type="image/svg+xml"></object>
+      </div>
+    </section>
+
+    <!-- 05: CONTRIBUTION SNAKE PIPELINE -->
+    <section>
+      <div class="section-header">
+        <div class="section-tag">05 // AUTOMATED CRON ACTION</div>
+        <h2 class="section-title">Contribution Snake Game</h2>
+      </div>
+      <div class="svg-embed-card" style="padding: 10px; background: #070b16;">
+        <img src="https://raw.githubusercontent.com/chakshubuilds/chakshubuilds/output/github-snake-dark.svg?v=15" alt="Snake animation" style="width: 100%;">
+      </div>
+    </section>
+
+    <!-- 06: CONNECT & COLLABORATE -->
+    <section>
+      <div class="section-header">
+        <div class="section-tag">06 // COMMUNICATION HUB</div>
+        <h2 class="section-title">Connect &amp; Collaborate</h2>
+      </div>
+      <div class="svg-embed-card">
+        <object data="assets/connect.svg?v=15" type="image/svg+xml"></object>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bar">
+      Architected &amp; Engineered by <strong><a href="https://github.com/chakshubuilds" target="_blank">Chakshu Arora (@chakshubuilds)</a></strong> · 2026
+    </footer>
+
+  </main>
+
+  <script>
+    // Force auto-cache bust local object SVGs on file:// reload
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('object').forEach(obj => {
+        const src = obj.getAttribute('data');
+        if (src) {
+          const base = src.split('?')[0];
+          obj.setAttribute('data', base + '?t=' + Date.now());
+        }
+      });
+    });
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const banner = document.getElementById('mainBanner');
+      const icon = document.getElementById('themeIcon');
+      if (html.getAttribute('data-theme') === 'dark') {
+        html.setAttribute('data-theme', 'light');
+        banner.setAttribute('data', 'light.svg?t=' + Date.now());
+        icon.textContent = '🌙';
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        banner.setAttribute('data', 'dark.svg?t=' + Date.now());
+        icon.textContent = '☀️';
+      }
+    }
+  </script>
+</body>
+</html>
