@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chakshu-builds/chakshu-builds/main/dark.svg?v=15">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/chakshu-builds/chakshu-builds/main/light.svg?v=15">
-    <img alt="Chakshu Arora — profile.sh --live" src="https://raw.githubusercontent.com/chakshu-builds/chakshu-builds/main/dark.svg?v=15" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chakshu-builds/Chakshu/main/dark.svg?v=16">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/chakshu-builds/Chakshu/main/light.svg?v=16">
+    <img alt="Chakshu Arora — profile.sh --live" src="https://raw.githubusercontent.com/chakshu-builds/Chakshu/main/dark.svg?v=16" width="100%">
   </picture>
 </p>
 
@@ -17,7 +17,7 @@
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/chakshu-builds/chakshu-builds/main/assets/about-life.svg?v=15" alt="01. About &amp; Engineering Matrix" width="100%">
+  <img src="https://raw.githubusercontent.com/chakshu-builds/Chakshu/main/assets/about-life.svg?v=16" alt="01. About &amp; Engineering Matrix" width="100%">
 </p>
 
 ---
@@ -25,7 +25,7 @@
 ## 🛠️ 02. Technical Architecture & Stack
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/chakshu-builds/chakshu-builds/main/assets/stack.svg?v=15" alt="Engineering Stack Matrix" width="100%">
+  <img src="https://raw.githubusercontent.com/chakshu-builds/Chakshu/main/assets/stack.svg?v=16" alt="Engineering Stack Matrix" width="100%">
 </p>
 
 | Discipline | Core Technologies & Frameworks |
@@ -42,7 +42,7 @@
 ## 🪪 03. Developer Telemetry & Passport
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/chakshu-builds/chakshu-builds/main/assets/id-dashboard.svg?v=15" alt="Developer ID Dashboard" width="100%">
+  <img src="https://raw.githubusercontent.com/chakshu-builds/Chakshu/main/assets/id-dashboard.svg?v=16" alt="Developer ID Dashboard" width="100%">
 </p>
 
 ---
@@ -50,7 +50,7 @@
 ## 📊 04. Live Activity & Engineering Telemetry
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/chakshu-builds/chakshu-builds/main/assets/activity-dashboard.svg?v=15" alt="Live Engineering Telemetry & Velocity" width="100%">
+  <img src="https://raw.githubusercontent.com/chakshu-builds/Chakshu/main/assets/activity-dashboard.svg?v=16" alt="Live Engineering Telemetry & Velocity" width="100%">
 </p>
 
 ---
@@ -59,9 +59,9 @@
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chakshu-builds/chakshu-builds/output/github-snake-dark.svg?v=15" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/chakshu-builds/chakshu-builds/output/github-snake.svg?v=15" />
-    <img alt="Snake eating my contributions" src="https://raw.githubusercontent.com/chakshu-builds/chakshu-builds/output/github-snake.svg?v=15" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chakshu-builds/Chakshu/output/github-snake-dark.svg?v=16" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/chakshu-builds/Chakshu/output/github-snake.svg?v=16" />
+    <img alt="Snake eating my contributions" src="https://raw.githubusercontent.com/chakshu-builds/Chakshu/output/github-snake.svg?v=16" />
   </picture>
 </div>
 
@@ -70,7 +70,7 @@
 ## 📬 06. Connect & Collaborate
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/chakshu-builds/chakshu-builds/main/assets/connect.svg?v=15" alt="Connect with Chakshu" width="100%">
+  <img src="https://raw.githubusercontent.com/chakshu-builds/Chakshu/main/assets/connect.svg?v=16" alt="Connect with Chakshu" width="100%">
 </p>
 
 <div align="center">
